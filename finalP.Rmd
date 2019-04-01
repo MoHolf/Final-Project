@@ -2,6 +2,8 @@
 
 ##Group members: Mohamed Hamza, Hongwei Wang
 ##The data shows the informtion of all current sex offenders in city of Chicago.
+##Analyzing this data can be very important when it comes to understanding the characteristics of sex offenders..
+##..and to get a closer look at people who commit such crimes.
 ##Source is data.gov
 ##Link: https://catalog.data.gov/dataset/sex-offenders-938b3
 ##By analysing this data we want to answer the following questions:
