@@ -1,0 +1,21 @@
+```{r}
+
+##Group members: Mohamed Hamza, Hongwei Wang
+##The data shows the informtion of all current sex offenders in city of Chicago.
+##Source is data.gov
+##Link: https://catalog.data.gov/dataset/sex-offenders-938b3
+##By analysing this data we want to answer the following questions:
+##What is the average age group they fall under?
+##Are males more likely to be regestered sex offenders than femails?
+
+Data <- read.csv ( "Sex_Offenders.csv")
+
+dataf <- data.frame(Data)
+
+dataf
+
+
+
+```
+```
+
