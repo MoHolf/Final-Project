@@ -13,7 +13,6 @@ Data <- read.csv ( "Sex_Offenders.csv")
 
 ##I used the data of the current English Soccer league
 SORecord <- data.frame(Data)
-SORecord
 
 x <- SORecord$WEIGHT
 
@@ -55,6 +54,7 @@ for (i in 1 : n)
 
 summary(fit)
 
+## We chose this model because the Multiple R-squared is closer to 1 than in the other models.
 ## Estimate shows the relationship between x and y, for an x value x1 we can perdict the y value to be 48.6 + (x1*0.0012)
 ## the P-value is 0.89 which means there is a 89% chance that height is not meaningful for the regression.
 ## the t value of 0.138 suggests that the relationship is positive and not significant 
@@ -67,7 +67,6 @@ Data <- read.csv ( "Sex_Offenders.csv")
 
 ##I used the data of the current English Soccer league
 SORecord <- data.frame(Data)
-SORecord
 
 x <- SORecord$HEIGHT
 
@@ -81,8 +80,6 @@ plot( x, y,
       col = "black", cex = 2, pch = 21, frame = FALSE)
 
 
-
-
 ```
 
 ```{r}
@@ -93,7 +90,6 @@ Data <- read.csv ( "Sex_Offenders.csv")
 
 ##I used the data of the current English Soccer league
 SORecord <- data.frame(Data)
-SORecord
 
 x1 <- SORecord$WEIGHT
 x2 <- SORecord$HEIGHT
@@ -105,8 +101,6 @@ ex1 = resid(lm(x1~x2))
 g = ggplot(SORecord, aes(y = ey, x = ex1, colour = SORecord$HEIGHT))
 g = g + geom_point(colour="grey50", size = 5) + geom_smooth(method = lm, se = FALSE, colour = "black") + geom_point(size = 4)
 g
-
-
 
 
 
