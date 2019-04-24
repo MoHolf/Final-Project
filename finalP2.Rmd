@@ -1,0 +1,116 @@
+---
+title: "Final project assignment 2"
+authors: "Hongwei Wang and Mohamed Hmaza"
+date: "04/23/2019"
+---
+
+```{r}
+
+
+library("rvest")
+
+Data <- read.csv ( "Sex_Offenders.csv")
+
+##I used the data of the current English Soccer league
+SORecord <- data.frame(Data)
+SORecord
+
+x <- SORecord$WEIGHT
+
+y <- SORecord$AGE
+
+##plot x and y
+plot( x, y,
+      xlab = "Height",
+      ylab = "Age",
+      bg = "lightblue",
+      col = "black", cex = 2, pch = 21, frame = FALSE)
+
+
+
+
+n <- length (y)
+
+fit <- lm(y ~ x)
+
+e <- resid (fit)
+
+yhat <- predict (fit)
+
+
+##create the plot between x and e
+plot( x, e,
+      xlab = "Height",
+      ylab = "age",
+      bg = "lightblue",
+      col = "black", cex = 2, pch = 21, frame = FALSE)
+
+
+##add the regression line
+abline (h = 0, lwd = 2)
+
+##add the red lines
+for (i in 1 : n)
+  lines (c(x[i], x[i]), c(e[i],0), col = "red", lwd = 2)
+
+summary(fit)
+
+## Estimate shows the relationship between x and y, for an x value x1 we can perdict the y value to be 48.6 + (x1*0.0012)
+## the P-value is 0.89 which means there is a 89% chance that height is not meaningful for the regression.
+## the t value of 0.138 suggests that the relationship is positive and not significant 
+```
+
+```{r}
+library("rvest")
+
+Data <- read.csv ( "Sex_Offenders.csv")
+
+##I used the data of the current English Soccer league
+SORecord <- data.frame(Data)
+SORecord
+
+x <- SORecord$HEIGHT
+
+y <- SORecord$AGE
+
+##plot x and y
+plot( x, y,
+      xlab = "Height",
+      ylab = "Age",
+      bg = "lightblue",
+      col = "black", cex = 2, pch = 21, frame = FALSE)
+
+
+
+
+```
+
+```{r}
+library("ggplot2")
+library("rvest")
+
+Data <- read.csv ( "Sex_Offenders.csv")
+
+##I used the data of the current English Soccer league
+SORecord <- data.frame(Data)
+SORecord
+
+x1 <- SORecord$WEIGHT
+x2 <- SORecord$HEIGHT
+y1 <- SORecord$AGE
+
+ey = resid(lm(y1~x2))
+ex1 = resid(lm(x1~x2))
+
+g = ggplot(SORecord, aes(y = ey, x = ex1, colour = SORecord$HEIGHT))
+g = g + geom_point(colour="grey50", size = 5) + geom_smooth(method = lm, se = FALSE, colour = "black") + geom_point(size = 4)
+g
+
+
+
+
+
+```
+
+
+
