@@ -55,7 +55,7 @@ for (i in 1 : n)
 summary(fit)
 
 ## We chose this model because the Multiple R-squared is closer to 1 than in the other models.
-## Estimate shows the relationship between x and y, for an x value x1 we can perdict the y value to be 48.6 + (x1*0.0012)
+## Estimate shows the relationship between x and y, for an x value x1 we can predict the y value to be 48.6 + (x1*0.0012)
 ## the P-value is 0.89 which means there is a 89% chance that height is not meaningful for the regression.
 ## the t value of 0.138 suggests that the relationship is positive and not significant 
 ```
