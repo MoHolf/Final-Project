@@ -11,7 +11,7 @@ library("rvest")
 
 Data <- read.csv ( "Sex_Offenders.csv")
 
-##I used the data of the current English Soccer league
+
 SORecord <- data.frame(Data)
 
 x <- SORecord$WEIGHT
@@ -20,7 +20,7 @@ y <- SORecord$AGE
 
 ##plot x and y
 plot( x, y,
-      xlab = "Height",
+      xlab = "WEIGHT",
       ylab = "Age",
       bg = "lightblue",
       col = "black", cex = 2, pch = 21, frame = FALSE)
@@ -39,7 +39,7 @@ yhat <- predict (fit)
 
 ##create the plot between x and e
 plot( x, e,
-      xlab = "Height",
+      xlab = "WEIGHT",
       ylab = "age",
       bg = "lightblue",
       col = "black", cex = 2, pch = 21, frame = FALSE)
@@ -53,11 +53,17 @@ for (i in 1 : n)
   lines (c(x[i], x[i]), c(e[i],0), col = "red", lwd = 2)
 
 summary(fit)
+  
 
 ## We chose this model because the Multiple R-squared is closer to 1 than in the other models.
 ## Estimate shows the relationship between x and y, for an x value x1 we can predict the y value to be 48.6 + (x1*0.0012)
-## the P-value is 0.89 which means there is a 89% chance that height is not meaningful for the regression.
-## the t value of 0.138 suggests that the relationship is positive and not significant 
+## the P-value is 0.89 which means there is a 89% chance that weight is not meaningful for the regression.
+## the t value of 0.138 suggests that the relationship is positive and not significant
+########################################################################################################
+## Final Thoughts:
+## From this we can see that there is no clear relationship between a sex offender's weight and age
+## people usually have a set picture for people who commit such crimes, but if our study showed anything, 
+## it showed that it can be anyone with any body shape in whatever age from late teens to even late 80s
 ```
 
 ```{r}

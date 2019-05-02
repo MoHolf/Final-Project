@@ -32,7 +32,13 @@ shinyUI(fluidPage(
                   min = 0,
                   max = 500,
                   value = 0),
-      
+      sliderInput("bins2",
+                  "Value:",
+                  min = 0,
+                  max = 620,
+                  value = 0),
+      checkboxInput("showModel1","Show/Hide Model 1", value = TRUE),
+      checkboxInput("showModel2","Show/Hide Model 2", value = TRUE),
       h6("Author:"),
       h6("Mohamed Hamza"),
       h6("Hongwei Wang"),
@@ -47,13 +53,17 @@ shinyUI(fluidPage(
     
     
     
-    
-    # Show a plot of the generated distribution
     mainPanel(
       list(tags$head(tags$style("body {background-color: #2f6640; }"))),
       plotOutput("SOPlot1"),
       
-      plotOutput("SOPlot2")
+      plotOutput("SOPlot2"),
+      
+      h3("Predicted Age from Model 1:"),
+      textOutput("pred1"),
+      h3("Predicted Age from Model 2:"),
+      textOutput("pred2")
+      
     )
   )
 ))
