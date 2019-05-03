@@ -9,7 +9,7 @@ library(shiny)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel(strong("Sex Ofenders Profile")),
+  titlePanel(strong("Sex Offenders Profile")),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(

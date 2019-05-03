@@ -63,7 +63,7 @@ shinyServer(function(input, output) {
     
     plot( x, y,
           
-          xlab = "Height",
+          xlab = "Weight",
           
           ylab = "Age",
           
@@ -125,7 +125,7 @@ shinyServer(function(input, output) {
     
     plot( x, e,
           
-          xlab = "Height",
+          xlab = "Weight",
           
           ylab = "age",
           
